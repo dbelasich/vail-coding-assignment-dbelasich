@@ -13,9 +13,11 @@ def shift_list_position(number_list: list, shift: int) -> list:
     try:
         if not number_list:
             raise ValueError("The number list must be populated.")
+        if not isinstance(shift, int):
+            raise TypeError("Shift value must be a positive integer.")
         if shift < 0:
             raise ValueError("Shift value must be a positive integer.")
-    except ValueError as e:
+    except (ValueError, TypeError) as e:
         print(e)
         return []
 
@@ -34,29 +36,3 @@ def shift_list_position(number_list: list, shift: int) -> list:
     number_list.extend(temp_list)
 
     return number_list
-
-
-def main():
-    numbers = [1, 2, 3, 4, 5, 6, 7]
-    shift = 4
-    print("Input list: {}, shift: {}.".format(numbers, shift))
-    print("Output: {}".format(shift_list_position(numbers, shift)))
-
-    numbers = [1, 2, 3, 4, 5, 6, 7]
-    shift = 10
-    print("Input list: {}, shift: {}.".format(numbers, shift))
-    print("Output: {}".format(shift_list_position(numbers, shift)))
-
-    numbers = [1, 2, 3, 4, 5, 6, 7]
-    shift = -6
-    print("Input list: {}, shift: {}.".format(numbers, shift))
-    print("Output: {}".format(shift_list_position(numbers, shift)))
-
-    numbers = []
-    shift = 6
-    print("Input list: {}, shift: {}.".format(numbers, shift))
-    print("Output: {}".format(shift_list_position(numbers, shift)))
-
-
-if __name__ == "__main__":
-    main()

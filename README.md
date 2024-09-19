@@ -7,6 +7,11 @@ If for example you have an array of integers [1,2,3,4,5,6,7] and we would like t
 Note: the solution should be able to handle a position value greater than the number of integers in the array. If, for example, we would like to rotate [1,2,3,4,5,6,7] 8 positions to left, it would produce the result [2,3,4,5,6,7,1]. Negative values for the positions to rotate will throw an error which the code example should handle gracefully.
 
 # Notes:
-This solution was written in Python.  The module shift_position.py contains the solution in a function, as well as a main function that contains the primary test cases.
+This solution was written in Python, and is located in the module shift_position.py
 
-This solution can be executed either by running the module in an IDE, or via command line with the command "python shift_position.py"
+The test cases for this solution are in the "tests" package in the module "test_shift_position.py"
+If you wish to run these test cases, please do the following:
+
+1. Create a virtual environment and activate it
+2. Run the following command: "pip install -r requirements.txt" to install pytest and its dependencies
+3. From the project root directory, run the test module with the command: "pytest tests/test_shift_position.py"
