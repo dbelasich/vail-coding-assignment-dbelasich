@@ -8,8 +8,11 @@ def shift_list_position(number_list: list, shift: int) -> list:
     """
     temp_list = []
 
-    # Verify the shift number is a positive integer; if it is not, exit gracefully and display the error
+    # Verify the shift number is a positive integer and the list is populated; if it is not, exit gracefully and
+    # display the error
     try:
+        if not number_list:
+            raise ValueError("The number list must be populated.")
         if shift < 0:
             raise ValueError("Shift value must be a positive integer.")
     except ValueError as e:
@@ -46,6 +49,11 @@ def main():
 
     numbers = [1, 2, 3, 4, 5, 6, 7]
     shift = -6
+    print("Input list: {}, shift: {}.".format(numbers, shift))
+    print("Output: {}".format(shift_list_position(numbers, shift)))
+
+    numbers = []
+    shift = 6
     print("Input list: {}, shift: {}.".format(numbers, shift))
     print("Output: {}".format(shift_list_position(numbers, shift)))
 
